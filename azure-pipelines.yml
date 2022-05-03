@@ -1,0 +1,43 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+- azure-pipeline
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  containers:
+  - container: latex
+    image: blang/latex
+    endpoint: dockerhub_connection
+
+container: latex
+steps:
+- script: latexmk --version
+  displayName: 'Check Latex Version'
+
+- script: mkdir output
+  displayName: 'Create output folder'
+
+- script: |
+    cd src
+    latexmk -shell-escape -pdf -file-line-error -synctex=1 -interaction=batchmode -cd main.tex
+  displayName: 'Build document'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/src/'
+    Contents: 'main.pdf'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    ArtifactName: 'Document $(Build.BuildNumber)'
+    PathtoPublish: $(Build.ArtifactStagingDirectory)
+    publishLocation: Container
+    TargetPath: .
