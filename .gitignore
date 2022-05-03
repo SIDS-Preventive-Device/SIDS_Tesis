@@ -15,5 +15,6 @@
 *.out
 *.gz
 *.toc
+*.dvi
 _minted*
 *.synctex(busy)
