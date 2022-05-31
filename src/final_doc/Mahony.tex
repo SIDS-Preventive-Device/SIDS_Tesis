@@ -1,22 +1,25 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{placeins}
+\usepackage{xparse}
+\usepackage{caption}
 
-\section{Orientacion}
+
+\graphicspath{ {images/} }
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\renewcommand\arraystretch{1.5}
+\captionsetup[figure]{labelfont={bf},  font={small}}
+\captionsetup[table]{labelfont={bf}, font={small}}
+\def\tablename{Table}
+\pagestyle{plain}
+
+
+\begin{document}
+    \section{Orientacion}
 
     \subsection{Cuaternión}
-        Antes de explicar que es el cuaternion, hay que entender el por que de su existencía, estos surgen de la necesidad de
-        querer intentar generalizar los números complejos con el fin de representar rotaciones y movimientos de vectores en el espacio 
-        tridimensional.
-        \begin{figure}[htp!]
-            \centering
-            \includegraphics[width = 0.40 \textwidth]{quaternion_representation.png}
-            \caption{Objeto en 3D donde su rotación puede ser representada mediante cuaterniones o angulos de Tait-Bryan}
-            \label{fig: rotation_representation}
-        \end{figure}
-        \FloatBarrier
-        Aclarado esto y como podemos ver en la \ref{fig: rotation_representation}, podemos entender que los cuaterniones son elementos
-        de gran importancia en cualquier tipo de area donde se busque
-        medir/detectar/monitorear movimientos, areas como la industria aeroespacial, de la salud, de los videjuegos, entre otras. 
-
-        De forma simple, los cuaterniones son números hipercomplejos, siendo una extension de los números reales, similar a la de los números complejos convencionales.
+        Los cuaterniones son números hipercomplejos, siend una extension de los números reales, similar a la de los números complejos convencionales.
         
         Mientras que los números complejos son una extensión de los reales por la adición de la unidad imaginaria \textbf{$ i $}, tal que \textbf{$ i^2 = -1 $}
         , los cuaterniones son una extensión generada de manera análoga, añadiendo las unidades imaginarias: $i, j$ y $ k $ a los números reales 
@@ -37,13 +40,13 @@
                 \label{table: Cayley}
             \end{table}
 
-        En el cuadro \ref{table: Cayley} se nos describe como es la operacion de las componentes entre si para un cuaternión.
+        La tabla \ref{table: Cayley} naos describe como es la operacion de las componentes entre si para un cuaternión.
 
         Un cuaternión tiene la siguiente forma y estructura:
         $$ q = [a, \hspace{1mm} b, \hspace{1mm} c, \hspace{1mm} d]$$
         $$ q = a + bi +cj + dk $$
 
-        Donde a, b, c y d son coeficiente reales unívocamente determinados por cada cuaternión y 
+        Donde a, b, c y d son números reales unívocamente determinados por cada cuaternión y 
         1, $ i, j $ y $ k $, son entonces las componentes "base" de un cuaternión.
 
         Con los cuaterniones podemos realizar las 4 operaciones basicas con sus respectivas propiedades, estas operaciones son
@@ -207,7 +210,7 @@
 
     \begin{figure}[htp!]
         \centering
-             \includegraphics[width = 0.40 \textwidth]{tait-bryan_axis_representation.png}
+             \includegraphics[width=\columnwidth]{tait-bryan_axis_representation.png}
               \caption{Representacion de la orientación de un objeto mediante los ángulos de Tait-Bryan}
     \end{figure}
     \FloatBarrier 
@@ -225,6 +228,6 @@
             \end{bmatrix}
     \end{equation}
 
-    Para este proyecto, se hicieron pruebas con ambos tipos de representación para la orientación, 
+    Para el presente proyecto, se hicieron pruebas con ambos tipos de representación para la orientación, 
     donde se opto por la del cuaternión, debido a que tiene menos limitantes que la de angulos de Tait-Bryan.
-
+\end{document}
