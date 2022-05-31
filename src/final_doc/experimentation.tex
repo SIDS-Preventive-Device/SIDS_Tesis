@@ -6,7 +6,7 @@
     \subsection{Pruebas con filtro de Mahony y MPU-9250}
        A continuación se muestran algunas de las pruebas que se hiceron usando en conjunto el 
        MPU-9250 y el filtro de Mahony. Donde con el MPU-9250 obtendremos mediciones de sus 3 sensores internos, acelerómetro, 
-       giroscopio y magnetómetro, las fusionaremos y filtraremos con el filtro de Mahony que 
+       giroscopio y magnetómetro, las fusionaremos y usaremos el filtro de Mahony que 
        implementamos para así poder obtener la orientación actual del bebé.
 
        \begin{figure}[htp!]
@@ -47,7 +47,7 @@
         \textbf{Diagrama de conexión para el circuito}
         \begin{figure}[htp!]
             \centering
-                \includegraphics[width=\columnwidth]{wiring_diagram_mpu_9250_mahony_filter.png}
+                \includegraphics[width = 0.35 \textwidth]{wiring_diagram_mpu_9250_mahony_filter.png}
                 \caption{Representacion de la orientación de un objeto mediante los ángulos de Tait-Bryan}
             \end{figure}
             \FloatBarrier 
@@ -65,20 +65,20 @@
 
         \begin{figure}[htp!]
             \centering
-                 \includegraphics[width=\columnwidth]{Temperature_sensor_measurements.png}
-                  \caption{Prueba de orientación en el eje-Y utilizando el MPU-9250 y el filtro Mahony}
+                 \includegraphics[width = \columnwidth]{Temperature_sensor_measurements.png}
+                  \caption{Prueba de medición de temperatura de un objeto y del ambiente con el MLX90614}
                   \label{fig: temperature_measurements}
         \end{figure}
         \FloatBarrier 
 
-        Como se observa en la figura \ref{fig: temperature_measurements} del monitor serial, el sensor puede obtener la temperatura del 
+        Como se observa en la figura \ref{fig: temperature_measurements} sobre el monitor serial, el sensor puede obtener la temperatura del 
         ambiente y el objeto, que en este caso será el bebé. Además es importante aclarar que el sensor viene calibrado de fabrica en un amplio rango de temperaturas de 
         -40 a 85 °C para la temperatura ambiente y -70 a 382.2 °C para la temperatura del objeto.\newline
 
         \textbf{Diagrama de conexión para el circuito}
         \begin{figure}[htp!]
             \centering
-                \includegraphics[width=\columnwidth]{wiring_diagram_mlx90614.png}
+                \includegraphics[width = 0.32 \textwidth]{wiring_diagram_mlx90614.png}
                 \caption{Representacion de la orientación de un objeto mediante los ángulos de Tait-Bryan}
             \end{figure}
             \FloatBarrier 
@@ -104,5 +104,5 @@
         \FloatBarrier
 
         En la figura \ref{fig: battery_test} se puede ver como la batería tuvo una muy buena duracion aun incluso sin tener optimizaciones
-        el código
+        el código.
 

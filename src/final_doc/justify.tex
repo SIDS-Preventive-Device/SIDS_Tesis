@@ -28,71 +28,71 @@ Actualmente es aceptado que los bebés que duermen boca abajo tienen un riesgo d
 
 Por lo que se propone disminuir este riesgo utilizando la tecnología como pilar, esto desarrollando un dispositivo que sea portátil, lo menos invasivo posible y que nos permita monitorear diferentes aspectos del bebe durante el sueño y determinar si existe un riesgo a la vida del infante.
 
-\section{Antecedentes}
+\subsection{Antecedentes}
 
 Cuidar a un bebé nunca ha sido tarea fácil, los padres tienen que estar al pendiente de sus hijos todo el tiempo, sobre todo cuando estos están en su cuna. La mayoría de las recomendaciones que se dan para que un bebe pueda dormir seguro en su cuna tienen que ver con la posición y acomodo en la que debe de estar acostado el bebé además de la ubicación de su cuna.
 
 A día de hoy hay dispositivos que tratan de ayudar a los padres con estas cuestiones, donde principalmente se tratan de monitores, pulseras o alfombrillas, a continuación, se muestran unos ejemplos:
 
-\subsection{Pulsera Liip}
+\subsubsection{Pulsera Liip}
 Este dispositivo es una pulsera con bluetooth, la cual manda información en tiempo real toda la información de las constantes vitales de un bebé a través de la app Liip Care en smartphones para hacer seguimiento de su bienestar. Ritmo cardíaco (lpm), niveles de oxígeno en sangre (\%) y temperatura (ºC).
 
 La conexión entre pulsera y smartphone es por medio bluetooth al aire libre la distancia de conexión es de 30 metros, pero en una vivienda se reduce por los materiales y tiene una duración de la batería aproximada de 12-13 horas.
 
 La manera en que notifica de algún suceso extraño es por medio de alertas, la aplicación puede ser modificada en dos modos: el modo tendencias genera las alertas solo cuando se detectan cambios que pueden suponer un problema para el bebé, reduciendo las falsas alarmas. El modo personalizado alerta en el momento de que se superen los umbrales definidos por el usuario.
 
-\subsection{Sense U}
+\subsubsection{Sense U}
 Este dispositivo es un monitor con cámara para bebés, el cual permite mediante la aplicación interactuar tanto con la cámara como con el micrófono y la bocina del monitor.
 
 Permite al usuario mediante la aplicación movil poder ver en video lo captado por la cámara, el sonido mediante el micrófono y la reproducción de audio mediante la bocina, además de recibir alertas cuando el bebé se mueva.
 
-\subsection{Babysense 7}
+\subsubsection{Babysense 7}
 Este dispositivo similar a un tapete, se colocan dos debajo del colchón y estos se centran en medir los movimientos del bebe de manera constante, enfocándose principalmente en su respiración, cuenta con un dispositivo aparte (conocido como unidad de control) que funciona como una alarma, este va agarrado a la cuna y utiliza 4 baterías AA.
 
 Tanto el tapete como la alarma se comunican de forma inalámbrica.
 La manera en que notifica de alguna situación del peligro es mediante una alarma tanto sonora como visual se activa cuando no se haya detectado ninguna clase de movimiento en los últimos 20 segundos, o si los movimientos del bebe se vuelven extremadamente lentos (menos de 10 micro movimientos por minuto)
 
-\section{Objetivos}
+\subsection{Objetivos}
 
-\subsection{Generales}
+\subsubsection{Generales}
 
 Ayudar en la prevención del \acrlong{smsl} detectando un 80\% de posibles asfixias.
 
-\subsection{Específicos}
+\subsubsection{Específicos}
 
 - Realizar mediciones de la posición, respiración y temperatura del bebe para determinar un posible riesgo.
 - Lanzar un aviso en caso de detectarse posibles riesgos al bebe.
 - Diseñar el sistema con las dimenciones adecuadas al tamaño de un infante.
 - Diseñar el sistema para ser ergonómico para el bebe.
 
-\section{Limitaciones}
+\subsection{Limitaciones}
 
 Este proyecto cuenta con varias limitaciones durante su etapa de experimentación y prototipado.
 
-\subsection{Tamaño del sistema}
+\subsubsection{Tamaño del sistema}
 
 El tamaño es una limitación ya que debe ser pequeño y liviano de forma que no moleste el sueño del bebe.
 
-\subsection{Precisión del dispositivo}
+\subsubsection{Precisión del dispositivo}
 
 Debido a la naturaleza experimental del proyecto, la precisión para determinar correctamente la posición del bebe y su colocación se vuelve un reto, por lo que es necesario limitar la cantidad de movimientos y posiciones distintas que el sistema pueda detectar.
 Esto representa enfocarnos a lograr la medición correcta de ciertos movimientos y posiciones, y posterior a esto, pasar a una etapa donde el sistema pueda ser más general. 
 
-\subsection{Duración de la batería}
+\subsubsection{Duración de la batería}
 
 Esta limitación está relacionada y es directa al tamaño del dispositivo, ya que, al ser portátil y suficientemente liviana para colocarse en la ropa del bebe, el manejo y duración de la batería se vuelve una tarea critica, por lo que el objetivo principal es que esta dura dos ciclos de sueño del bebe, dando un aproximado de 16 horas.
 
-\subsection{Medición de temperatura}
+\subsubsection{Medición de temperatura}
 
 Como parte de la propuesta para mejorar la calidad de nuestra predicción de riesgo se encuentra la medición de la temperatura del bebe, esto puede ser una limitación debido a que el dispositivo no entra en contacto con la piel del bebe, así que el método de medición puede resultar no fiable o no tener la velocidad de respuesta adecuada.
 
-\subsection{Medición de la respiración}
+\subsubsection{Medición de la respiración}
 
 Igual que la medición de temperatura, detectar la respiración es parte de las variables planteada para mejorar la calidad del dispositivo.
 
 Por lo que la selección sensores y el diseño de un algoritmo adecuado para determinar la respiración puede volverse una limitante, debido a que los movimientos de la respiración de un bebe son difíciles de captar.
 
-\section{Interés técnico y/o cientifico}
+\subsection{Interés técnico y/o cientifico}
 El interés principal de este producto surge del hecho de que se quiere abordar la problemática desde otra perspectiva como lo es con un dispositivo portátil que pueda pegarse de alguna manera a la ropa del bebe, dicho dispositivo incorporara elementos electrónicos y se relaciona con la tendencia del \acrshort{iot}, donde al abordarlo de esta forma nos toparemos con cuestiones como las siguientes:
 
 \begin{itemize}
@@ -104,7 +104,7 @@ El interés principal de este producto surge del hecho de que se quiere abordar 
 
 A final de cuentas, se busca que el producto sea versátil y de suma utilidad.
 
-\section{Utilidad}
+\subsection{Utilidad}
 Este dispositivo permite reducir la posibilidad de una muerte por asfixia en lactantes de entre 28 dias a 1 año.
 
 Esto se logra mediante un monitoreo del lactante durante los periodos de sueño detectando malas posturas que puedan derivar a riesgos para su salud, alertando a los tutores para que puedan reaccionar y evitar estos riesgos.

@@ -1,54 +1,134 @@
 \section{Construcción}
-\subsection{Diseño PCB}
 
-\subsubsection{Modulo de carga de batería}
-Dentro de nuestro sistema para la prevención de muerte de cuna, es critico el monitoreo del lactante, para ello se utilizó una pila de litio, pero para que sea constante se implementó un módulo de carga TP4056.
+    \subsection{Modulo de carga y alimentación}
 
-Nuestro sistema de prevención trabaja con 3.3v y las pilas de litio sus voltajes son de 3.6v para lo cual se tiene que implementar un LDO.
+    Dentro del sistema es critico el constante monitoreo de las variables de orientación, 
+    temperatura y respiración del bebé, para ello se utilizó una pila Li-Po para mantener 
+    alimentado el sistema. Al no poderse utilizar unicamente la batería de forma directa, se
+    diseño el siguiente modulo de carga y alimentación, el cual esta construido por 3 partes:
 
-\textbf{TP4056}
+    \begin{figure}[htp!]
+        \centering
+        \includegraphics[width=\columnwidth]{charging_and_power_supply_module.png}
+        \caption{Partes que conforman el modulo de carga y alimentación}
+        \label{fig: charging_and_power_module}
+    \end{figure}
+    \FloatBarrier
 
-El TP4056 es un chip encapsulado en formato SOP-8 que es capaz de gestionar la carga de una batería. Es decir, adecua la entrada de energía para el estándar de 1A de la mayoría de las baterías de litio que se usan en la industria electrónica.
+    \subsection{Diseño de PCB}
 
-\textbf{LDO}
+    \subsubsection{Esquematicos}   
 
-Un regulador de baja caída o LDO es un regulador de voltaje lineal de DC que puede regular el voltaje de salida cuando el voltaje de alimentación está muy cerca del voltaje de salida.
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{battery_module_schematic.png}
+            \caption{Esquematicos del modulo de carga y alimentación}
+            \label{fig: battery_module_schematic}
+        \end{figure}
+        \FloatBarrier
 
-Los módulos comerciales no cuentan con este LDO, por lo cual se diseñó el esquemático para implementarlo a nuestro sistema.
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{esp32_schematic.png}
+            \caption{Esquematico del ESP32-WROOM}
+            \label{fig: esp32_schematic}
+        \end{figure}
+        \FloatBarrier
 
-\begin{figure}[htp!]
-    \centering
-    \includegraphics[width=\columnwidth]{bateria_squematic.jpg}
-    \caption{Esquemáticos del módulo de carga de batería}
-    \label{fig: bateria}
-\end{figure}\FloatBarrier
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{ft232rl_schematic.png}
+            \caption{Esquematico del FT232RL}
+            \label{fig: ft232rl_schematic}
+        \end{figure}
+        \FloatBarrier
 
-\subsubsection{Layout}
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{sensors_schematics.png}
+            \caption{Esquematicos de los sensores}
+            \label{fig: sensors_schematics}
+        \end{figure}
+        \FloatBarrier
 
-Al diseñar los diagramas esquematicos y realizando las pruebas pertinentes se decidio realizar una unica pcb la cual seria de manera pequrña y que no represntara problemas o imcomodidad al lactante.
+        
 
-Se diseño un modelo 3D para poder corraborar de que tamaño quedaria nuestro dispositivo.
+    \subsubsection{Layout}
+        Al diseñar los diagramas esquematicos y realizando las pruebas pertinentes se decidio realizar 
+        una unica pcb la cual seria manera pequeña y que no representara problemas o incomodidad por su 
+        tamaño, forma y carcasa al bebé.
 
-Todo esto diseñado en el software altium acontinuacion se muestran algunas imagenes del layout y el diseño 3D.
-\begin{figure}[htp!]
-    \centering
-    \includegraphics[width=\columnwidth]{layout.jpg}
-    \caption{Layout de nuestro PCB}
-    \label{fig: Layout}
-\end{figure}\FloatBarrier
+        A continuación se muestra el layout final de la primera versión:
 
-\subsubsection{PCB 3D}
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{layout.jpeg}
+            \caption{Layout del PCB}
+            \label{fig: layout}
+        \end{figure}
+        \FloatBarrier
 
-\begin{figure}[htp!]
-    \centering
-    \includegraphics[width=\columnwidth]{vista_frontal_3D.jpg}
-    \caption{Vista frontal PCB}
-    \label{fig: frontal}
-\end{figure}\FloatBarrier
-\begin{figure}[htp!]
-    \centering
-    \includegraphics[width=\columnwidth]{vista_lateral_3D.jpg}
-    \caption{Vista lateral PCB}
-    \label{fig: lateral}
-\end{figure}\FloatBarrier
-\subsection{Carcasa}
+    \subsubsection{PCB 3D}
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{isometric_view_3D.jpg}
+            \caption{Vista isometrica del PCB y la batería}
+            \label{fig: isometric_3d}
+        \end{figure}
+        \FloatBarrier
+        \begin{figure}[htp!]
+            \centering
+            \includegraphics[width=\columnwidth]{top_view_3D_1.jpg}
+            \caption{Vista superior del PCB}
+            \label{fig: top_3d}
+        \end{figure}
+        \FloatBarrier
+
+        En las figuras \ref{fig: isometric_3d} y \ref{fig: top_3d} se muestra el modelo 3D, este fue hecho
+        para poder corraborar de que tamaño quedaría el dispositivo final contando la PCB y la batería.
+
+        Tanto el modelo 3D como el layout de la PCB fue diseñado en el software Altium.
+    \subsection{Diseño de Carcasa}
+        \begin{figure}[htp!]
+            \centering
+                \includegraphics[width=\columnwidth]{system_shell_v2.png}
+                \caption{Vista isometrica de la carcasa}
+                \label{fig: isometric_view_shell}
+        \end{figure}
+        \FloatBarrier
+
+        \begin{figure}[htp!]
+            \centering
+                \includegraphics[width=\columnwidth]{front_view_system_shell_v2.png}
+                \caption{Vista de la parte frontal de la carcasa, donde esta el puerto USB}
+                \label{fig: front_view_shell}
+        \end{figure}
+        \FloatBarrier
+
+        \begin{figure}[htp!]
+            \centering
+                \includegraphics[width=\columnwidth]{top_view_syste_shell_v2.png}
+                \caption{Vista superior de la carcasa}
+                \label{fig: top_view_shell}
+        \end{figure}
+        \FloatBarrier
+
+        \begin{figure}[htp!]
+            \centering
+                \includegraphics[width=\columnwidth]{system_shell v2_w_pcb.png}
+                \caption{Vista isometrica de la carcasa con la PCB y bateria dentro}
+                \label{isometric_view_pcb_shell}
+        \end{figure}
+        \FloatBarrier
+
+        En las figuras \ref{fig: isometric_view_shell}, \ref{fig: front_view_shell},
+        \ref{fig: top_view_shell} y \ref{isometric_view_pcb_shell}, se puede ver el diseño propuesto
+        para la carcasa del sistema, donde esta tendra las siguientes aberturas:
+
+        \begin{itemize}
+            \item Switch encendido/apagado
+            \item Puerto de carga Micro-USB tipo-B
+            \item Salida para el sonido del buzzer
+            \item Led infrarrojo del sensor de temperatura
+        \end{itemize}
+
