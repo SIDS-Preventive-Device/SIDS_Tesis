@@ -1,8 +1,8 @@
 
-\section{Orientacion}
+\section{Orientación}
 
-    \subsection{Cuaternión}
-        Antes de explicar que es el cuaternion, hay que entender el por que de su existencía, estos surgen de la necesidad de
+    \subsection{Cuaternion}
+        Antes de explicar que es el cuaternion, hay que entender el por que de su existencia, estos surgen de la necesidad de
         querer intentar generalizar los números complejos con el fin de representar rotaciones y movimientos de vectores en el espacio 
         tridimensional.
         \begin{figure}[htp!]
@@ -15,7 +15,7 @@
 
         Aclarado esto y como podemos ver en la fig \ref{fig: rotation_representation}, podemos entender que los cuaterniones son elementos
         de gran importancia en cualquier tipo de area donde se busque
-        medir/detectar/monitorear movimientos, areas como la industria aeroespacial, de la salud, de los videjuegos, entre otras. 
+        medir/detectar/monitorear movimientos, áreas como la industria aeroespacial, de la salud, de los videjuegos, entre otras. 
 
         De forma simple, los cuaterniones son números hipercomplejos, siendo una extension de los números reales, similar a la de los números complejos convencionales.
         
@@ -38,16 +38,16 @@
                 \label{table: Cayley}
             \end{table}
 
-        En el cuadro \ref{table: Cayley} se nos describe como es la operacion de las componentes entre si para un cuaternión.
+        En el cuadro \ref{table: Cayley} se nos describe como es la operación de las componentes entre si para un cuaternion.
 
-        Un cuaternión tiene la siguiente forma y estructura:
+        Un cuaternion tiene la siguiente forma y estructura:
         $$ q = [a, \hspace{1mm} b, \hspace{1mm} c, \hspace{1mm} d]$$
         $$ q = a + bi +cj + dk $$
 
-        Donde a, b, c y d son coeficiente reales unívocamente determinados por cada cuaternión y 
-        1, $ i, j $ y $ k $, son entonces las componentes "base" de un cuaternión.
+        Donde a, b, c y d son coeficiente reales unívocamente determinados por cada cuaternion y 
+        1, $ i, j $ y $ k $, son entonces las componentes "base" de un cuaternion.
 
-        Con los cuaterniones podemos realizar las 4 operaciones basicas con sus respectivas propiedades, estas operaciones son
+        Con los cuaterniones podemos realizar las 4 operaciones básicas con sus respectivas propiedades, estas operaciones son
         suma, resta, producto y cociente, solo hay que tener en cuenta que el producto no es conmitativo, el orden de los operandos
         si afecta.
         $$  q_{a+b} = q_a + q_b $$
@@ -59,7 +59,7 @@
     \subsection{Filtro de Mahony}
     Es un filtro del tipo complementario, su principal objetivo es el mejorar la estimación de la orientación, aplicando un filtro pasa bajas a las estimaciones obtenidas del acelerómetro y magnetómetro, paralelamente aplicando un filtro pasa altas a las estimaciones obtenidas del giroscopio, para al final fusionar estas dos estimaciones y así obtener una estimación más precisa de la orientación. 
     
-    Este filtro tiene dos parametros modificables, los cuales son \textbf{\textit{Kp}} y \textbf{\textit{Ki}}, los cuales son el control integral y el control proporcional respectivamente. De igual forma que con otro tipo de filtros de la misma índole, este se basa en una representación en forma de cuaterniones.
+    Este filtro tiene dos parámetros modificables, los cuales son \textbf{\textit{Kp}} y \textbf{\textit{Ki}}, los cuales son el control integral y el control proporcional respectivamente. De igual forma que con otro tipo de filtros de la misma índole, este se basa en una representación en forma de cuaterniones.
     \begin{figure}[htp]
         \centering
              \includegraphics[width=\columnwidth]{mahony_block_diagram_vertical.png}
@@ -91,7 +91,7 @@
         \end{equation}
             
         
-        \item Se establece la referencia a la dirección del campo magnético terrestre, utilizando las estimaciones del magnetómetro y los valores del cuaternión calculado en la iteración anterior:
+        \item Se establece la referencia a la dirección del campo magnético terrestre, utilizando las estimaciones del magnetómetro y los valores del cuaternion calculado en la iteración anterior:
         
         \begin{equation}
             \resizebox{0.84\hsize}{!}{$
@@ -116,7 +116,7 @@
             $}
         \end{equation}
             
-        \item Se estima la dirección del campo gravitacional \textbf{\textit{$\vec{v}$}} y campo magnético \textbf{\textit{$\vec{w}$}} con referencia al IMU, utilizando la referencia calculada en el paso anterior y los valores del cuaternión calculados en la iteración anterior:
+        \item Se estima la dirección del campo gravitacional \textbf{\textit{$\vec{v}$}} y campo magnético \textbf{\textit{$\vec{w}$}} con referencia al IMU, utilizando la referencia calculada en el paso anterior y los valores del cuaternion calculados en la iteración anterior:
         
         \begin{equation}        
             \vec{v} = 
@@ -163,7 +163,7 @@
             \vec{w_k} = \vec{w_k}_{-1} + K_pe +K_iE_k 
         \end{equation}
             
-        \item El vector de velocidad angular corregido es utilizado en conjunto con el cuaternión de la iteración anterior para calcular la tasa de cambio o derivada del cuaternión de orientación actual:
+        \item El vector de velocidad angular corregido es utilizado en conjunto con el cuaternion de la iteración anterior para calcular la tasa de cambio o derivada del cuaternion de orientación actual:
         
         \begin{equation}
             \dot{q} = \frac{1}{2}{q_k}_{-1} \otimes \vec{w_k} 
@@ -172,7 +172,7 @@
             \dot{q} = \frac{1}{2}[q_1, \hspace{1mm} q_2, \hspace{1mm} q_3, \hspace{1mm} q_4] \otimes [0, \hspace{1mm} w_{x,k}, \hspace{1mm} w_{y,k}, \hspace{1mm} w_{z,k}] 
         \end{equation}
 
-        Donde el caracter $ \otimes $  indica una multiplicacion entre cuaterniones, quedando de la siguiente forma:
+        Donde el caracter $ \otimes $  indica una multiplicación entre cuaterniones, quedando de la siguiente forma:
         \begin{equation}
             \dot{q} = 
                 \begin{bmatrix}
@@ -183,13 +183,13 @@
                 \end{bmatrix} 
         \end{equation}    
 
-        \item El resultado del paso anterior se integra de la siguiente manera para así obtener el cuaternión de orientación de la iteración actual:
+        \item El resultado del paso anterior se integra de la siguiente manera para así obtener el cuaternion de orientación de la iteración actual:
         
         \begin{equation}
             q_k = q_{k-1} + \dot{q} \Delta t 
         \end{equation}
     
-        \item Finalmente, se normaliza (este se normaliza como si se tratase de un vector) y obtenemos la estimacion de la orientacion en terminos de cuaterniones:
+        \item Finalmente, se normaliza (este se normaliza como si se tratase de un vector) y obtenemos la estimación de la orientación en terminos de cuaterniones:
         \begin{equation}
             \hat{q_k} = \frac{q_k}{\norm{q_k}} 
         \end{equation}        
@@ -203,7 +203,7 @@
     \subsection{Angulos de Tait-Bryan}
 
     Además de la representación por cuaterniones, se tiene como alternativa los ángulos de Tait-Bryan para poder representar la orientación, mediante funciones
-    trigonometricas y utilizando el resultado entregado por la ecuación \ref{eq:18} se puede obtener la inclinacion en los ejes x, y, z, los cuales se conocen 
+    trigonométricas y utilizando el resultado entregado por la ecuación \ref{eq:18} se puede obtener la inclinación en los ejes x, y, z, los cuales se conocen 
     como \textbf{Roll ($ \phi $)}, \textbf{Pitch ($ \theta  $)}, y \textbf{Yaw ($ \psi  $)} respectivamente.
 
     \begin{figure}[htp!]
@@ -227,5 +227,5 @@
     \end{equation}
 
     Para este proyecto, se hicieron pruebas con ambos tipos de representación para la orientación, 
-    donde se opto por la del cuaternión, debido a que tiene menos limitantes que la de angulos de Tait-Bryan.
+    donde se optó por la del cuaternion, debido a que tiene menos limitantes que la de angulos de Tait-Bryan.
 
